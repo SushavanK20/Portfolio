@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading | Sushavan Karmakar</title>
+    <meta name="theme-color" content="#f6f8fc">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%2300629d'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3ESK%3C/text%3E%3C/svg%3E">
+    <noscript><meta http-equiv="refresh" content="0;url=./index.html"></noscript>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00629d;
+            --on-primary: #ffffff;
+            --primary-container: #cfe5ff;
+            --on-primary-container: #001d32;
+            --success: #1b6b4a;
+            --success-container: #a6f2c8;
+            --on-success-container: #002113;
+            --surface: #f6f8fc;
+            --surface-low: #f0f3f9;
+            --surface-container: #e9edf4;
+            --surface-lowest: #ffffff;
+            --on-surface: #181c20;
+            --on-surface-variant: #42474e;
+            --outline-variant: #c3c7cf;
+            --font: "Roboto Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            --font-mono: "Roboto Mono", ui-monospace, Menlo, Consolas, monospace;
+            --total: 4200ms; /* keep in sync with DURATION in the script */
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html { min-height: 100%; }
+        body {
+            display: grid; place-items: center; padding: 20px;
+            min-height: 100vh; min-height: 100dvh; margin: 0;
+            background: var(--surface); color: var(--on-surface);
+            font-family: var(--font); line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        :focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+        .material-symbols-outlined { font-size: 24px; line-height: 1; user-select: none; }
+
+        .loader {
+            width: min(100%, 440px);
+            background: var(--surface-lowest);
+            border: 1px solid var(--outline-variant);
+            border-radius: 28px;
+            padding: 32px 28px 24px;
+            box-shadow: 0 1px 2px rgba(24, 28, 32, .12), 0 2px 6px 2px rgba(24, 28, 32, .08);
+        }
+
+        .who { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+        .mark {
+            width: 56px; height: 56px; border-radius: 18px; flex: none;
+            display: grid; place-items: center;
+            background: var(--primary); color: var(--on-primary);
+            font-weight: 700; font-size: 1.15rem; letter-spacing: .02em;
+        }
+        .who h1 { margin: 0; font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
+        .who p { margin: 2px 0 0; font-size: .9rem; color: var(--on-surface-variant); }
+
+        .steps { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 14px; }
+        .step { display: flex; align-items: center; gap: 14px; color: var(--on-surface-variant); transition: color .25s; }
+        .step__icon { width: 28px; height: 28px; display: grid; place-items: center; flex: none; }
+        .step__icon .material-symbols-outlined { font-size: 26px; }
+        .step.is-running { color: var(--on-surface); font-weight: 500; }
+        .step.is-running .step__icon { color: var(--primary); }
+        .step.is-done { color: var(--on-surface); }
+        .step.is-done .step__icon { color: var(--success); }
+        .step.is-done .material-symbols-outlined { font-variation-settings: "FILL" 1; }
+
+        .spinner {
+            width: 20px; height: 20px; border-radius: 50%;
+            border: 3px solid var(--primary-container); border-top-color: var(--primary);
+            animation: spin .8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .log {
+            margin-bottom: 20px; padding: 12px 14px; min-height: 44px;
+            border-radius: 12px; background: var(--surface-low);
+            font-family: var(--font-mono); font-size: .82rem; color: var(--on-surface-variant);
+        }
+
+        /* Material linear progress, determinate */
+        .progress { height: 6px; border-radius: 999px; background: var(--surface-container); overflow: hidden; }
+        .progress__bar {
+            height: 100%; width: 0; border-radius: inherit; background: var(--primary);
+            transition: width var(--total) linear, background .3s;
+        }
+        .progress.is-complete .progress__bar { background: var(--success); }
+
+        .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; min-height: 40px; }
+        .status { font-size: .875rem; color: var(--on-surface-variant); }
+        .skip {
+            height: 40px; padding: 0 16px; border: 0; border-radius: 999px;
+            background: transparent; color: var(--primary);
+            font: 500 .9rem var(--font); cursor: pointer; text-decoration: none;
+            display: inline-flex; align-items: center;
+            transition: background .2s;
+        }
+        .skip:hover { background: color-mix(in srgb, var(--primary) 8%, transparent); }
+
+        @media (prefers-reduced-motion: reduce) {
+            .spinner { animation: none; border-top-color: var(--primary); }
+            .progress__bar { transition: none; }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="loader" aria-busy="true" id="loader">
+        <div class="who">
+            <div class="mark">SK</div>
+            <div>
+                <h1>Sushavan Karmakar</h1>
+                <p>Senior DevOps Engineer</p>
+            </div>
+        </div>
+
+        <ol class="steps" id="steps">
+            <li class="step"><span class="step__icon"><span class="material-symbols-outlined">radio_button_unchecked</span></span>Provisioning resources</li>
+            <li class="step"><span class="step__icon"><span class="material-symbols-outlined">radio_button_unchecked</span></span>Applying configuration</li>
+            <li class="step"><span class="step__icon"><span class="material-symbols-outlined">radio_button_unchecked</span></span>Running health checks</li>
+            <li class="step"><span class="step__icon"><span class="material-symbols-outlined">radio_button_unchecked</span></span>Going live</li>
+        </ol>
+
+        <p class="log" id="log">terraform init: ready</p>
+
+        <div class="progress" id="progress" role="progressbar" aria-label="Loading portfolio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress__bar" id="bar"></div>
+        </div>
+
+        <div class="foot">
+            <span class="status" id="status" role="status">Starting up</span>
+            <a class="skip" id="skip" href="./index.html">Skip</a>
+        </div>
+    </main>
+
+    <script>
+        // Where to go when loading finishes. Change this if your main page has a different name.
+        const TARGET = "./main.html";
+        const DURATION = 4200;
+
+        const steps = [...document.querySelectorAll("#steps .step")];
+        const log = document.getElementById("log");
+        const bar = document.getElementById("bar");
+        const progress = document.getElementById("progress");
+        const status = document.getElementById("status");
+        const loader = document.getElementById("loader");
+
+        const logs = [
+            "terraform apply: 12 resources created",
+            "pipeline: configuration applied",
+            "health checks: all passing",
+            "traffic switched to portfolio",
+        ];
+        const statuses = ["Provisioning", "Configuring", "Checking", "Going live"];
+
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const slice = DURATION / steps.length;
+        const timers = [];
+        let redirected = false;
+
+        function setIcon(step, kind) {
+            const holder = step.querySelector(".step__icon");
+            holder.innerHTML = kind === "running"
+                ? '<span class="spinner" aria-hidden="true"></span>'
+                : '<span class="material-symbols-outlined">' + (kind === "done" ? "check_circle" : "radio_button_unchecked") + "</span>";
+        }
+
+        function go() {
+            if (redirected) return;
+            redirected = true;
+            timers.forEach(clearTimeout);
+            window.location.replace(TARGET);
+        }
+
+        function finish() {
+            progress.classList.add("is-complete");
+            progress.setAttribute("aria-valuenow", "100");
+            loader.setAttribute("aria-busy", "false");
+            status.textContent = "Ready";
+            log.textContent = "portfolio is live";
+        }
+
+        function run() {
+            // Start the determinate bar after first paint so the transition plays
+            requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = "100%"; }));
+
+            steps.forEach((step, i) => {
+                timers.push(setTimeout(() => {
+                    if (i > 0) { steps[i - 1].classList.replace("is-running", "is-done"); setIcon(steps[i - 1], "done"); }
+                    step.classList.add("is-running");
+                    setIcon(step, "running");
+                    log.textContent = logs[i];
+                    status.textContent = statuses[i];
+                    progress.setAttribute("aria-valuenow", String(Math.round((i / steps.length) * 100)));
+                }, i * slice));
+            });
+
+            timers.push(setTimeout(() => {
+                const last = steps[steps.length - 1];
+                last.classList.replace("is-running", "is-done");
+                setIcon(last, "done");
+                finish();
+            }, DURATION));
+
+            timers.push(setTimeout(go, DURATION + 500));
+        }
+
+        if (reduce) {
+            steps.forEach((s) => { s.classList.add("is-done"); setIcon(s, "done"); });
+            bar.style.width = "100%";
+            finish();
+            timers.push(setTimeout(go, 1200));
+        } else {
+            run();
+        }
+    </script>
+</body>
+
+</html>

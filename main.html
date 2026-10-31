@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushavan Karmakar | Senior DevOps Engineer</title>
+    <meta name="description" content="Portfolio of Sushavan Karmakar, Senior DevOps Engineer working with Azure, Terraform, CI/CD pipelines, monitoring and Python automation.">
+    <meta name="theme-color" content="#f6f8fc">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='28' fill='%2300629d'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3ESK%3C/text%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Top app bar -->
+    <header class="app-bar" id="app-bar">
+        <div class="container app-bar__inner">
+            <a href="#hero" class="brand" aria-label="Sushavan Karmakar, home">
+                <span class="brand__mark">SK</span>
+                <span class="brand__name">Sushavan Karmakar</span>
+            </a>
+            <nav class="nav" id="nav" aria-label="Primary">
+                <a href="#about" class="nav__link">About</a>
+                <a href="#experience" class="nav__link">Experience</a>
+                <a href="#certificates" class="nav__link">Certificates</a>
+                <a href="#projects" class="nav__link">Projects</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </nav>
+            <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="container hero__grid">
+                <div class="hero__text">
+                    <span class="chip chip--status"><span class="dot"></span>Open to DevOps and cloud roles</span>
+                    <h1 class="hero__title">Hi, I am Sushavan</h1>
+                    <p class="hero__lead">Senior DevOps Engineer who ships infrastructure as code. From cloud architecture to AI experiments to full-stack web builds—I love crafting solutions that make an impact...</p>
+                    <div class="hero__actions">
+                        <a href="./assets/my-resume.pdf" class="btn btn--filled ripple">
+                            <span class="material-symbols-outlined">description</span>View resume
+                        </a>
+                        <a href="#contact" class="btn btn--tonal ripple">
+                            <span class="material-symbols-outlined">mail</span>Get in touch
+                        </a>
+                    </div>
+                </div>
+                <figure class="hero__photo">
+                    <img src="./assets/img/hero.jpg" alt="Portrait of Sushavan Karmakar">
+                </figure>
+            </div>
+
+            <!-- Pipeline: the one animated moment on the page -->
+            <div class="container">
+                <div class="pipeline" id="pipeline" aria-label="Illustration of a CI/CD pipeline running to completion">
+                    <ol class="pipeline__stages">
+                        <li class="stage"><span class="stage__icon material-symbols-outlined">edit_note</span><span class="stage__name">Plan</span></li>
+                        <li class="stage"><span class="stage__icon material-symbols-outlined">construction</span><span class="stage__name">Build</span></li>
+                        <li class="stage"><span class="stage__icon material-symbols-outlined">fact_check</span><span class="stage__name">Test</span></li>
+                        <li class="stage"><span class="stage__icon material-symbols-outlined">shield</span><span class="stage__name">Scan</span></li>
+                        <li class="stage"><span class="stage__icon material-symbols-outlined">rocket_launch</span><span class="stage__name">Deploy</span></li>
+                        <li class="stage"><span class="stage__icon material-symbols-outlined">monitoring</span><span class="stage__name">Monitor</span></li>
+                    </ol>
+                    <p class="pipeline__log" id="pipeline-log" aria-live="off">terraform plan: ready</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="section" id="about">
+            <div class="container">
+                <h2 class="section__title">About me</h2>
+                <div class="about__grid">
+                    <div class="about__text">
+                        <p>I'm an Azure DevOps engineer at TCS. I build cloud-native systems that are scalable, secure and automated, using CI/CD pipelines, infrastructure as code and cloud cost and performance tuning.</p>
+                        <p>Outside of pipelines, I'm curious about machine learning and generative AI: training models, fine-tuning LLMs and trying AI-powered tools on real problems.</p>
+                        <p>I write Python and Java daily, and I like building small web tools with HTML, CSS and JavaScript so that backend logic has a clear front end.</p>
+                        <dl class="facts">
+                            <div><dt>Experience</dt><dd>3 years</dd></div>
+                            <div><dt>Projects</dt><dd>10+</dd></div>
+                            <div><dt>Companies</dt><dd>2</dd></div>
+                        </dl>
+                    </div>
+
+                    <div class="skills">
+                        <h3 class="skills__title">Tools I work with</h3>
+                        <div class="skill-group">
+                            <h4>Cloud</h4>
+                            <div class="chips"><span class="chip"><span class="material-symbols-outlined">cloud</span>Azure</span><span class="chip"><span class="material-symbols-outlined">cloud</span>GCP</span></div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Infrastructure and CI/CD</h4>
+                            <div class="chips"><span class="chip"><span class="material-symbols-outlined">deployed_code</span>Terraform</span><span class="chip"><span class="material-symbols-outlined">sync_alt</span>Azure DevOps pipelines</span></div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Automation and scripting</h4>
+                            <div class="chips"><span class="chip"><span class="material-symbols-outlined">terminal</span>Python</span><span class="chip"><span class="material-symbols-outlined">terminal</span>PowerShell</span><span class="chip"><span class="material-symbols-outlined">code</span>Java</span></div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Monitoring</h4>
+                            <div class="chips"><span class="chip"><span class="material-symbols-outlined">query_stats</span>KQL</span><span class="chip"><span class="material-symbols-outlined">dashboard</span>Dashboards and logs</span></div>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Web</h4>
+                            <div class="chips"><span class="chip"><span class="material-symbols-outlined">web</span>Flask</span><span class="chip"><span class="material-symbols-outlined">html</span>HTML</span><span class="chip"><span class="material-symbols-outlined">css</span>CSS</span><span class="chip"><span class="material-symbols-outlined">javascript</span>JavaScript</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience and education -->
+        <section class="section section--tinted" id="experience">
+            <div class="container">
+                <h2 class="section__title">Experience and education</h2>
+                <div class="split">
+                    <div>
+                        <h3 class="subhead"><span class="material-symbols-outlined">work</span>Work</h3>
+                        <ol class="timeline">
+                            <li class="timeline__item">
+                                <h4>Systems Engineer, Tata Consultancy Services</h4>
+                                <p class="timeline__date">August 2023 to present</p>
+                                <p>Azure infrastructure and DevOps engineer. I deploy resources with Terraform, build end-to-end monitoring dashboards, and use Python and PowerShell to automate requirement gathering, wiki updates and resource log insights.</p>
+                            </li>
+                            <li class="timeline__item">
+                                <h4>Software Engineer Intern, Persistent Systems</h4>
+                                <p class="timeline__date">January to June 2023</p>
+                                <p>Full-stack Java developer. Built a web application with Spring Boot on the backend and HTML, CSS and JavaScript on the frontend.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h3 class="subhead"><span class="material-symbols-outlined">school</span>Education</h3>
+                        <ol class="timeline">
+                            <li class="timeline__item">
+                                <h4>Academy of Technology</h4>
+                                <p class="timeline__date">August 2019 to July 2023</p>
+                                <p>B.Tech in Computer Science and Engineering.</p>
+                            </li>
+                            <li class="timeline__item">
+                                <h4>Chandernagore Kanailal Vidyamandir</h4>
+                                <p class="timeline__date">2011 to 2019</p>
+                                <p>Schooling up to Class 12.</p>
+                            </li>
+                        </ol>
+                        <a href="./assets/my-resume.pdf" class="btn btn--outlined ripple">
+                            <span class="material-symbols-outlined">download</span>Full resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates -->
+        <section class="section" id="certificates">
+            <div class="container">
+                <h2 class="section__title">Certificates</h2>
+                <div class="grid grid--3">
+                    <!-- TODO: replace with real certificate names and verification links -->
+                    <a href="#" class="card card--link ripple">
+                        <span class="card__icon material-symbols-outlined">workspace_premium</span>
+                        <h3>Learning</h3>
+                        <p>Courses and certifications completed.</p>
+                        <span class="card__more">See all<span class="material-symbols-outlined">arrow_forward</span></span>
+                    </a>
+                    <a href="#" class="card card--link ripple">
+                        <span class="card__icon material-symbols-outlined">emoji_events</span>
+                        <h3>Contests</h3>
+                        <p>Coding and cloud competitions.</p>
+                        <span class="card__more">See all<span class="material-symbols-outlined">arrow_forward</span></span>
+                    </a>
+                    <a href="#" class="card card--link ripple">
+                        <span class="card__icon material-symbols-outlined">military_tech</span>
+                        <h3>Recognition</h3>
+                        <p>Awards and appreciation at work.</p>
+                        <span class="card__more">See all<span class="material-symbols-outlined">arrow_forward</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <!-- <section class="section section--tinted" id="projects">
+            <div class="container">
+                <h2 class="section__title">Recent projects</h2>
+                <div class="grid grid--3">
+                    <article class="card project">
+                        <div class="project__banner"><span class="material-symbols-outlined">deployed_code</span></div>
+                        <h3>Azure infrastructure with Terraform</h3>
+                        <p>Reusable modules that deploy and tag Azure resources the same way every time.</p>
+                        <div class="chips chips--small"><span class="chip">Terraform</span><span class="chip">Azure</span></div>
+                        <div class="project__links">
+                            <a href="#" class="text-btn">Live demo</a>
+                            <a href="#" class="text-btn">Source code</a>
+                        </div>
+                    </article>
+                    <article class="card project">
+                        <div class="project__banner"><span class="material-symbols-outlined">monitoring</span></div>
+                        <h3>Monitoring dashboards</h3>
+                        <p>End-to-end dashboards built on KQL queries so the team sees problems before users do.</p>
+                        <div class="chips chips--small"><span class="chip">KQL</span><span class="chip">Azure Monitor</span></div>
+                        <div class="project__links">
+                            <a href="#" class="text-btn">Live demo</a>
+                            <a href="#" class="text-btn">Source code</a>
+                        </div>
+                    </article>
+                    <article class="card project">
+                        <div class="project__banner"><span class="material-symbols-outlined">terminal</span></div>
+                        <h3>Ops automation scripts</h3>
+                        <p>Python and PowerShell tools that gather requirements, update wikis and summarise resource logs.</p>
+                        <div class="chips chips--small"><span class="chip">Python</span><span class="chip">PowerShell</span></div>
+                        <div class="project__links">
+                            <a href="#" class="text-btn">Live demo</a>
+                            <a href="#" class="text-btn">Source code</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact">
+                    <div>
+                        <h2 class="contact__title">Let's talk about your infrastructure.</h2>
+                        <p>Reach out about DevOps, cloud automation or a project you want a second pair of hands on.</p>
+                    </div>
+                    <ul class="contact__list">
+                        <li><a href="mailto:sushavan.karamakar@gmail.com" class="contact__row ripple"><span class="material-symbols-outlined">mail</span>sushavan.karamakar@gmail.com</a></li>
+                        <li><a href="tel:+919874077229" class="contact__row ripple"><span class="material-symbols-outlined">call</span>+91 98740 77229</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p>&copy; <span id="year">2026</span> Sushavan Karmakar</p>
+            <ul class="social">
+                <li>
+                    <a href="https://www.linkedin.com/in/sushavan-karmakar-7965a2195/" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3V9.75zm6.5 0h3.83v1.54h.05c.53-1 1.84-2.06 3.78-2.06 4.04 0 4.79 2.66 4.79 6.12V21h-4v-4.9c0-1.17-.02-2.67-1.63-2.67-1.63 0-1.88 1.27-1.88 2.58V21h-4V9.75z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/SushavanK20" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/sushavan_20/" class="icon-btn" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-3.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
